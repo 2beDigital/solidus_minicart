@@ -1,7 +1,3 @@
-/*
- *= require store/spree_frontend
-*/
-
 #progress {
   display:none;
   z-index: 99;
@@ -25,43 +21,32 @@ nav #main-nav-bar li#link-to-cart #minicart a.button {
 }
 
 ul#minicart-items {
+	 list-style: none;
   margin: 0 10px;
 }
 
 
 ul#minicart-items li{
-  width: 90px;
-  position: relative;
-  float: left;
-  min-height: 180px;
-  padding: 5px 10px 0;
-  text-align: center;
-  text-transform: none;
+	 min-height: 80px;
+	 border-style: dotted; border-color: black; border-width: 0px 0px 1px 0px;
+	 margin: 0px 0px 10px 0px; 
 }
-
 #minicart {
   background-color:aliceBlue;
   z-index: 100;
   position: absolute;
-  right: 16px;
+  right: 20px;
   padding: 10px;
   border: 1px solid #DEDEDE;
   float:right;
   display: none;
-  width: 300px;
+  width: 360px;
 }
-ul#minicart-items li img{
-  display: block;
-  margin-left: 20px;
-}
+ul#minicart-items > li > a > img { float: left; padding: 0px 10px 0px 0px; }
 
 #minicart div#minicart-details a.button.checkout{
   float:right;
 }
-
-#link-to-cart span.amount {
-  display: none;
-}
-#minicart .minicart-actions {
-  display: none;
-}
+#minicart-details { margin: 0px 0px 10px 0px; padding: 0px 0px 10px 0px; border-style: solid; border-color: white; border-width: 0px 0px 1px 0px; }
+.minicart-actions { float: right; position: relative; top: -36px; }
+#minicart-footer { float: right; }
