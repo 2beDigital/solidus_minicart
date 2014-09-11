@@ -1,8 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature "minicart", :js => true do
   before(:each) {
-    @product = create(:product, :name => "ror mug", :price => 30)
+    @products = Spree::Product.all
+    if (@products.size == 0)
+      @product = create(:product, :name => "ror mug", :price => 30)
+    end
   }
 
   scenario "customer should be able to add and delete a product in the minicart" do
