@@ -69,10 +69,10 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
-  config.after(:each) do
-    # ERROR: undefined method `collect' for nil:NilClass
-    #    DatabaseCleaner.clean
-  end
+  # causes error
+  #  config.after(:each) do
+  #    DatabaseCleaner.clean
+  #  end
 
 
   # RSpec Rails can automatically mix in different behaviours to your tests
