@@ -69,9 +69,10 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
+  # causes error
+  #  config.after(:each) do
+  #    DatabaseCleaner.clean
+  #  end
 
 
   # RSpec Rails can automatically mix in different behaviours to your tests
