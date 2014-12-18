@@ -70,8 +70,7 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do
-    # ERROR: undefined method `collect' for nil:NilClass
-    #    DatabaseCleaner.clean
+    DatabaseCleaner.clean
   end
 
 
