@@ -16,12 +16,9 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  # doesn't work with rails 4.1.10
-  s.add_dependency 'rails', '4.1.9'
-
   s.add_dependency 'sprockets', '~> 2.12'
-  s.add_dependency 'spree_core', '~> 2.4'
-  s.add_dependency 'spree_frontend', '~> 2.4'
+  s.add_dependency 'spree_core', '~> 3.0'
+  s.add_dependency 'spree_frontend', '~> 3.0'
   
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'factory_girl', '~> 4.5'
