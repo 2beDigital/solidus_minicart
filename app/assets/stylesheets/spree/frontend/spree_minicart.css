@@ -1,14 +1,12 @@
 #progress {
   display:none;
   z-index: 99;
-  top: 0px;
   text-align: center;
   background: #00ADEE;
   padding: 4px 10px;
   color: white;
   margin: 0 auto;
-  position: fixed;
-  left:50%;
+  position: fixed; left: 44%; top: 32%;
 }
 
 nav #main-nav-bar li#link-to-cart #minicart a {
