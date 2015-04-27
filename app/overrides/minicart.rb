@@ -1,5 +1,5 @@
 Deface::Override.new(:virtual_path => 'spree/shared/_main_nav_bar',
-                     :original => 'c152ccf0d8a6b2526c58484997d7880975b53efb',
+                     :original => '838e211947e51dd9e5056f685103c00b2094c5d2',
                      :name => 'add_mini_cart',
                      :insert_after => "#main-nav-bar",
                      :partial => "spree/shared/minicart")
