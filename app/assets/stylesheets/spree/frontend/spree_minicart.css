@@ -1,14 +1,12 @@
 #progress {
   display:none;
   z-index: 99;
-  top: 0px;
   text-align: center;
   background: #00ADEE;
   padding: 4px 10px;
   color: white;
   margin: 0 auto;
-  position: fixed;
-  left:50%;
+  position: fixed; left: 44%; top: 32%;
 }
 
 nav #main-nav-bar li#link-to-cart #minicart a {
@@ -35,12 +33,12 @@ ul#minicart-items li{
   background-color:aliceBlue;
   z-index: 100;
   position: absolute;
-  right: 20px;
+  right: 0px;
   padding: 10px;
   border: 1px solid #DEDEDE;
   float:right;
   display: none;
-  width: 360px;
+  width: 400px;
 }
 ul#minicart-items > li > a > img { float: left; padding: 0px 10px 0px 0px; }
 
@@ -48,5 +46,5 @@ ul#minicart-items > li > a > img { float: left; padding: 0px 10px 0px 0px; }
   float:right;
 }
 #minicart-details { margin: 0px 0px 10px 0px; padding: 0px 0px 10px 0px; border-style: solid; border-color: white; border-width: 0px 0px 1px 0px; }
-.minicart-actions { float: right; position: relative; top: -36px; }
+.minicart-actions { float: right; position: relative; top: -20px; }
 #minicart-footer { float: right; }

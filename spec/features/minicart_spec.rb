@@ -12,7 +12,7 @@ feature "minicart", :js => true do
     visit spree.products_path
     click_link("ror mug")
 
-    page.execute_script '$("#minicart").slideDown()'
+    page.execute_script 'jQuery("#minicart").slideDown()'
     within("#minicart") do
       page.should have_content("cart is empty")
     end
@@ -20,7 +20,7 @@ feature "minicart", :js => true do
     click_button "Add To Cart"
     URI.parse(current_url).path.should =~ /cart/
 
-    page.execute_script '$("#minicart").slideDown()'
+    page.execute_script 'jQuery("#minicart").slideDown()'
     within("#minicart") do
       page.should have_content("ror mug")
       page.should have_content("$30")
@@ -42,7 +42,7 @@ feature "minicart", :js => true do
     visit spree.products_path
     click_link("ror mug")
 
-    page.execute_script '$("#minicart").slideDown()'
+    page.execute_script 'jQuery("#minicart").slideDown()'
     within("#minicart") do
       page.should have_content("cart is empty")
     end
@@ -53,7 +53,7 @@ feature "minicart", :js => true do
     end
     URI.parse(current_url).path.should =~ /cart/
 
-    page.execute_script '$("#minicart").slideDown()'
+    page.execute_script 'jQuery("#minicart").slideDown()'
     within("#minicart") do
       page.should have_content("2 x")
       page.should have_content("ror mug")
@@ -62,7 +62,7 @@ feature "minicart", :js => true do
       end
     end
 
-    page.execute_script '$("#minicart").trigger("mouseenter")'
+    page.execute_script 'jQuery("#minicart").trigger("mouseenter")'
     within "div.minicart-actions" do
       find('a.minicart_remove img').click
     end

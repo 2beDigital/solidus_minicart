@@ -1,4 +1,4 @@
-//= require spree/frontend/jquery.hoverintent
+//= require spree/frontend/jquery.hoverIntent.minified
 var DEBUG = false;
 if(!DEBUG){
     if(!window.console) window.console = {};

@@ -8,11 +8,11 @@ Minicart allows customer to preview their cart before they start the checkout pr
 Installation
 ------------
 
-To install Spree Minicart for spree 2.2.x, just add the following to your Gemfile:
+To install Spree Minicart for spree 3.0.x, just add the following to your Gemfile:
 
 
 ```ruby
-gem 'spree_minicart', :git => 'git://github.com/cahein/spree_minicart.git', :branch => "2-2-stable"
+gem 'spree_minicart', :git => 'git://github.com/cahein/spree_minicart.git', :branch => "3-0-stable"
 ```
 
 Now, bundle up with:
@@ -21,7 +21,7 @@ Now, bundle up with:
 bundle install
 ```
 
-And finally run the install generator to automatically insert 'require spree/frontend/spree_minicart' in your asset file. If you experience a problem with loading assets from the 'vendor/assets' folder, simply copy the relevant lines into the 'app/assets' files (all.js, all.css).
+And finally run the install generator:
 
 ```ruby
 rails g spree_minicart:install
@@ -49,18 +49,11 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
     $ bundle exec rake test_app
     $ bundle exec rspec spec
 
-The Gemfile needs
-
-```ruby
-gem 'spree', '2.2.x'
-# Provides basic authentication functionality for testing parts of your engine
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-2-stable'
-```
 
 Compatibility
 ------------
 
-Tested under Spree 2.2.2, 2.2.5
+Tested under Spree 2.4.x, 3.0.x
 
 Contribute
 ----------
