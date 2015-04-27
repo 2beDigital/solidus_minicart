@@ -35,12 +35,12 @@ ul#minicart-items li{
   background-color:aliceBlue;
   z-index: 100;
   position: absolute;
-  right: 20px;
+  right: 0px;
   padding: 10px;
   border: 1px solid #DEDEDE;
   float:right;
   display: none;
-  width: 360px;
+  width: 400px;
 }
 ul#minicart-items > li > a > img { float: left; padding: 0px 10px 0px 0px; }
 
