@@ -1,17 +1,18 @@
+<% product_path = spree.product_path(variant.product) %>
+
 <li class="<%= cycle('', 'alt') %>">
+  <% if variant.images.length == 0 %>
+    <%= link_to mini_image(variant.product), product_path %>
+  <% else %>
+    <%= link_to image_tag(variant.images.first.attachment.url(:mini)), product_path %>
+  <% end %>
 
-<% if variant.images.length == 0 %>
-<%= link_to mini_image(variant.product), variant.product %>
-<% else %>
-<%= link_to image_tag(variant.images.first.attachment.url(:mini)), variant.product %>
-<% end %>
-
-<%= "#{line_item.quantity}" %> x 
-<%= link_to variant.product.name, spree.product_path(variant.product) %><br>
-<% if !variant.options_text.empty? %>
-<%= variant.options_text %><br>
-<% end %>
-<%= Spree::Money.new(line_item.price * line_item.quantity, { currency: current_currency }).to_html unless line_item.quantity.nil? %>
+  <%= "#{line_item.quantity}" %> x
+  <%= link_to variant.product.name, product_path %><br>
+  <% if !variant.options_text.empty? %>
+    <%= variant.options_text %><br>
+  <% end %>
+  <%= Spree::Money.new(line_item.price * line_item.quantity, { currency: current_currency }).to_html unless line_item.quantity.nil? %>
 
   <div class='minicart-actions' data-hook="minicart_item_actions">
     <div data-hook="minicart_item_quantity">
