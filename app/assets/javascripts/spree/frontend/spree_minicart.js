@@ -49,6 +49,10 @@ function slideUpMinicart() {
 				$(this).parent().siblings('div[data-hook="minicart_item_quantity"]').find("input.line_item_quantity").val(0);
 				$(this).parents('form').first().submit();
 				e.preventDefault();
+
+				if(document.location.pathname == '/cart') {
+					 document.location.reload();
+				}		  
 		  });
 
 		  $(document).on("ajax:beforeSend", "form[data-remote]", function(){

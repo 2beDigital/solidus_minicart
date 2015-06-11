@@ -1,13 +1,14 @@
-<li class="<%= cycle('', 'alt') %>">
+<% product_path = spree.product_path(variant.product) %>
 
+<li class="<%= cycle('', 'alt') %>">
 <% if variant.images.length == 0 %>
-<%= link_to mini_image(variant.product), variant.product %>
+<%= link_to mini_image(variant.product), product_path %>
 <% else %>
-<%= link_to image_tag(variant.images.first.attachment.url(:mini)), variant.product %>
+<%= link_to image_tag(variant.images.first.attachment.url(:mini)), product_path %>
 <% end %>
 
 <%= "#{line_item.quantity}" %> x 
-<%= link_to variant.product.name, spree.product_path(variant.product) %><br>
+<%= link_to variant.product.name, product_path %><br>
 <%= variant.options_text %><br>
 <%= number_to_currency(line_item.price * line_item.quantity) unless line_item.quantity.nil? %>
 
