@@ -50,3 +50,10 @@ ul#minicart-items > li > a > img { float: left; padding: 0px 10px 0px 0px; }
 #minicart-details { margin: 0px 0px 10px 0px; padding: 0px 0px 10px 0px; border-style: solid; border-color: white; border-width: 0px 0px 1px 0px; }
 .minicart-actions { float: right; position: relative; top: -36px; }
 #minicart-footer { float: right; }
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 667px) {
+	 #minicart { position: relative; float: none; width: 100%; }
+	 #minicart-footer { float: none; }
+}
