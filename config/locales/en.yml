@@ -1,4 +1,4 @@
 en:
   spree:
     view_shopping_cart: "See Cart"
-    incl_vat_plus_shipping: (incl. VAT, plus shipping)
+  your_bag: "Your bag"

@@ -1,0 +1,4 @@
+es:
+  spree:
+    view_shopping_cart: "Ver carrito"
+  your_bag: "Tu Cesta"

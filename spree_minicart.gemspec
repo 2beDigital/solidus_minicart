@@ -7,17 +7,21 @@ Gem::Specification.new do |s|
   s.description = "Spree Minicart allows customer to preview their cart without leaving the page they're on. This is a fork from https://github.com/sbounmy/spree_minicart by Stéphane Bounmy."
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author            = 'Stéphane Bounmy'
-  s.email             = 'stephanebounmy@gmail.com'
-  s.homepage          = 'https://github.com/sbounmy/spree_minicart'
+  s.author            = 'Noel Diaz'
+  s.email             = 'noeldiaz83@gmail.com '
+  s.homepage          = 'https://github.com/NoelDiazMesa/spree_tobe_minicart'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 3.0'
-  s.add_dependency 'spree_frontend', '~> 3.0'
+  # doesn't work with rails 4.1.10
+  s.add_dependency 'rails', '4.1.11'
+
+  s.add_dependency 'sprockets', '~> 2.12'
+  s.add_dependency 'spree_core', '~> 2.4'
+  s.add_dependency 'spree_frontend', '~> 2.4'
   
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'factory_girl', '~> 4.5'
