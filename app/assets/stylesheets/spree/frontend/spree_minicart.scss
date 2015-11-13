@@ -1,0 +1,236 @@
+
+@import "font-awesome";
+
+$preloader: image_path("spree/frontend/preloader.gif");
+
+div#cd-cart{
+  background: #FFF;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 300px;
+  z-index: 3;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  transition: right 0.3s;
+}
+
+#cd-cart-trigger a {
+  width: 60px;
+  height: 100%;
+}
+
+#cd-cart.speed-in {
+  right: 0;
+}
+
+#cd-cart > * {
+  padding: 0 1em;
+}
+
+div#cart_title{
+  background-color: black;
+  color: white;
+  height: 50px;
+  padding-top: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  p{
+    width: 100%;
+    a#close_cart{
+      color: white;
+      cursor: pointer;
+      float: left;
+      margin-top: -5px;
+    }
+  }
+}
+
+div#cd-cart-trigger{
+  display: inline-block;
+  list-style: none;
+}
+
+div#cd-shadow-layer {
+  position: fixed;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(67, 87, 121, 0.6);
+  cursor: pointer;
+  z-index: 2;
+  display: none;
+}
+
+div#cd-shadow-layer.is-visible {
+  display: block;
+  -webkit-animation: cd-fade-in 0.3s;
+  -moz-animation: cd-fade-in 0.3s;
+  animation: cd-fade-in 0.3s;
+}
+
+div#content_dynamic_cart{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding: 0px;
+}
+
+div#footer_dynamic_cart{
+  background-color: #ffffff;
+  bottom: 0;
+  box-shadow: 0px -3px 5px 0px #979798;
+  min-height: 100px;
+  padding: 0;
+  width: 100%;
+  div#minicart-details{
+    background-color: lightgray;
+    border-bottom: 1px solid grey;
+    padding: 15px;
+    width: 100%;
+    span.order-total{
+      float: right;
+    }
+  }
+  div#minicart-footer{
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+
+div#form_dynamic_cart{
+  flex: 1 1 0%;
+  overflow: auto;
+  padding: 10px;
+  position: relative;
+  p{
+    margin-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.minicart-actions{
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+}
+
+#progress {
+  background-color: #FFF;
+  box-shadow: 0px 3px 5px 0px #979798;
+  color: black;
+  display: none;
+  padding: 10px 0px;
+  text-align: center;
+  z-index: 99;
+  img{
+    background-size: 20px 20px;
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-top: -5px;
+    width: 30px;
+  }
+}
+
+ul#minicart-items{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  li{
+    a{
+      color: black;
+    }
+    border-bottom: 1px solid black;
+    div{
+      display: inline-block;
+    }
+    div#item_product_detail{
+      display: block;
+      padding: 3px;
+    }
+    .minicart-item-quantity{
+      margin-bottom: 5px;
+      width: 29%;
+      input{
+        width: 100%;
+      }
+    }
+    div.minicart-item-delete{
+      float: right;
+      margin-top: 13px;
+      text-align: center;
+      width: 8%;
+    }
+    div.minicart-item-total,
+    div.minicart-item-price{
+      height: 35px;
+      margin-left: 5px;
+      text-align: center;
+      width: 30%;
+    }
+    div.minicart-item-description{
+      padding-left: 5px;
+      text-align: left;
+      width: 70%;
+    }
+    div.loading {
+      background: transparent url($preloader) no-repeat center center;
+      background-size: 39px 39px;
+      display: none;
+      height: 40px;
+      margin-bottom: -13px;
+      margin-left: 20px;
+      margin-top: -4px;
+      visibility: hidden;
+      width: 40px;
+      z-index: 1;
+      transform: scale(0.5);
+      transition: opacity 0.5s, transform 0.5s;
+      -webkit-transform: scale(0.5);
+      -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    }
+  }
+}
+
+/* --------------------------------
+
+            XKEYFRAMES
+
+-------------------------------- */
+@-webkit-keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

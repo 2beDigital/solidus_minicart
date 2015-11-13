@@ -1,0 +1,7 @@
+// Refresh minicart count
+$("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>')
+
+// Refresh minicart line items
+$("#content_dynamic_cart").html('<%= escape_javascript render("spree/shared/minicart_content") %>')
+
+$("#progress").slideUp();

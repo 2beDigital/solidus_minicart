@@ -1,0 +1,13 @@
+<% current_order and current_order.update! # update to get correct total %>
+// Refresh minicart count
+$("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>');
+
+// Refresh minicart line items
+$("#content_dynamic_cart").html('<%= escape_javascript render("spree/shared/minicart_content") %>');
+
+$("#progress").slideUp();
+// Close minicart after 2,5 seconds
+setTimeout(function () {
+    $('#cd-cart').removeClass('speed-in');
+    $('#cd-shadow-layer').removeClass('is-visible');
+}, 2500);
