@@ -32,7 +32,7 @@
     <div id="footer_dynamic_cart">
       <div id="minicart-details" data-hook="minicart_details" class="clearfix">
         <div id="minicart_subtotal">
-          <h4><%= Spree.t(:subtotal) %>:</h4>
+          <h5><%= Spree.t(:subtotal) %>:</h5>
           <span class="order-total"><%= current_order.display_item_total %></span><br>
         </div>
 
@@ -63,7 +63,7 @@
         </div>
 
         <div id="minicart_total">
-          <h3><%= Spree.t(:total) %>:</h3> <span class="order-total"><%= current_order.display_total %></span><br>
+          <h4><%= Spree.t(:total) %>:</h4> <span class="order-total"><%= current_order.display_total %></span><br>
         </div>
       </div>
 
