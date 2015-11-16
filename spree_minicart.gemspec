@@ -7,10 +7,10 @@ Gem::Specification.new do |s|
   s.description = "Spree Minicart allows customer to preview their cart without leaving the page they're on. This is a fork from https://github.com/sbounmy/spree_minicart by Stéphane Bounmy."
   s.required_ruby_version = '>= 1.9.3'
 
+
   s.author            = '2bedigital'
   s.email             = 'noel@2bedigital.com '
   s.homepage          = 'https://github.com/2bedigital/spree_minicart'
-
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
