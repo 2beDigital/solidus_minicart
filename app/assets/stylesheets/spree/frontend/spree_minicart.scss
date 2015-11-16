@@ -113,6 +113,9 @@ div#footer_dynamic_cart{
 
   div#minicart-details h3, h4, h5{
     display: inline !important;
+    h4{
+      text-transform: uppercase;
+    }
   }
 
   div#minicart_shipping, div#minicart_tax{
