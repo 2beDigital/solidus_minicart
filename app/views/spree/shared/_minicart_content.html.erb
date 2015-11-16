@@ -5,7 +5,7 @@
     </div>
     <div id="footer_dynamic_cart">
       <div id="minicart-details" data-hook="minicart_details" class="clearfix">
-        <%= Spree.t(:subtotal) %>: <span class="order-total"><%= current_order.display_item_total %></span><br>
+        <%= Spree.t(:subtotal) %>: <span class="order-total">0,00</span><br>
       </div>
 
       <div id="minicart-footer" data-hook='minicart_item_actions'>
@@ -31,7 +31,40 @@
 
     <div id="footer_dynamic_cart">
       <div id="minicart-details" data-hook="minicart_details" class="clearfix">
-        <%= Spree.t(:subtotal) %>: <span class="order-total"><%= current_order.display_item_total %></span><br>
+        <div id="minicart_subtotal">
+          <h4><%= Spree.t(:subtotal) %>:</h4>
+          <span class="order-total"><%= current_order.display_item_total %></span><br>
+        </div>
+
+        <div id="minicart_shipping">
+          <% if current_order.shipment_adjustments.nonzero.exists? || current_order.shipments.any? %>
+              <% current_order.shipments.each do |shipment| %>
+                  <h5><%= Spree.t(:shipping) %>: <%= shipment.shipping_method.name %></h5>
+                  <span class="order-total"><%= shipment.display_discounted_cost %></span><br>
+              <% end %>
+          <% end %>
+        </div>
+
+        <div id="minicart_tax">
+          <% if current_order.line_item_adjustments.exists? %>
+              <% current_order.line_item_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
+                  <% if adjustments.sum(&:amount) != 0 %>
+                      <h5><%= Spree.t(:promotion) %>: <%= label %> </h5>
+                      <span class="order-total"><%= Spree::Money.new(adjustments.sum(&:amount), :currency => current_order.currency) %></span>
+                  <% end %>
+
+              <% end %>
+          <% end %>
+
+          <% current_order.all_adjustments.tax.eligible.group_by(&:label).each do |label, adjustments| %>
+              <h5><%= Spree.t(:tax) %>: <%= label %> </h5>
+              <span class="order-total"><%= Spree::Money.new(adjustments.sum(&:amount), :currency => current_order.currency) %></span>
+          <% end %>
+        </div>
+
+        <div id="minicart_total">
+          <h3><%= Spree.t(:total) %>:</h3> <span class="order-total"><%= current_order.display_total %></span><br>
+        </div>
       </div>
 
       <div id="minicart-footer" data-hook='minicart_item_actions'>
