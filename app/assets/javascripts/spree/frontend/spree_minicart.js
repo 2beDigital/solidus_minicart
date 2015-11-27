@@ -5,14 +5,18 @@ jQuery(document).ready(function($){
         $lateral_cart = $('#cd-cart'),
         $shadow_layer = $('#cd-shadow-layer'),
         $button_add_to_cart = $('#add-to-cart-button'),
-        item = '';
+        item = '',
+        divs = $('#product-variants .variant-options'),
+        selected = divs.find('a.selected');
 
 
-    // Open Cart
-    $button_add_to_cart.on('click', function(){
-        toggle_panel_visibility($lateral_cart, $shadow_layer, $('body'));
-        $("#progress").slideDown();
-    });
+    if (selected.length == divs.length) {
+        // Open Cart
+        $button_add_to_cart.on('click', function(){
+            toggle_panel_visibility($lateral_cart, $shadow_layer, $('body'));
+            $("#progress").slideDown();
+        });
+    }
 
     $cart_trigger.on('click', function(event){
         event.preventDefault();
