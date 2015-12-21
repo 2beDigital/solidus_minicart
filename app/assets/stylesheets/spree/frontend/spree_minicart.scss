@@ -155,6 +155,37 @@ div#form_dynamic_cart{
     text-align: center;
     text-transform: uppercase;
   }
+  div#errorExplanation{
+    padding: 10px;
+    h3, .h3 {
+      font-size: 12px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      text-align: justify;
+    }
+    p {
+      margin-top: 5px;
+      font-size: 12px;
+      text-transform: none;
+      text-align: justify;
+    }
+    ul{
+      list-style: outside none url;
+       li {
+        font-size: 12px;
+        text-transform: none;
+        text-align: justify;
+      }
+    }
+  }
+  div.minicart-item-description{
+    span.out-of-stock{
+      font-weight: bolder;
+      font-size: 16px;
+      color: rgb(169, 68, 66);
+    }
+  }
 }
 
 .minicart-actions{
