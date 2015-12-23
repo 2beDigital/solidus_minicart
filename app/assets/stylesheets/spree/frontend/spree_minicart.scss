@@ -250,23 +250,24 @@ ul#minicart-items{
       text-align: left;
       width: 70%;
     }
-    div.loading {
-      background: transparent url($preloader) no-repeat center center;
-      background-size: 39px 39px;
-      display: none;
-      height: 40px;
-      margin-bottom: -13px;
-      margin-left: 20px;
-      margin-top: -4px;
-      visibility: hidden;
-      width: 40px;
-      z-index: 1;
-      transform: scale(0.5);
-      transition: opacity 0.5s, transform 0.5s;
-      -webkit-transform: scale(0.5);
-      -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-    }
   }
+}
+
+div.loading {
+    background: transparent url($preloader) no-repeat center center;
+    background-size: 39px 39px;
+    display: none;
+    height: 40px;
+    margin-bottom: -13px;
+    margin-left: 20px;
+    margin-top: -4px;
+    visibility: hidden;
+    width: 40px;
+    z-index: 1;
+    transform: scale(0.5);
+    transition: opacity 0.5s, transform 0.5s;
+    -webkit-transform: scale(0.5);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
 }
 
 /// Update Coupon_code
