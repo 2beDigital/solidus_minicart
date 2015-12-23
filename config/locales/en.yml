@@ -1,4 +1,5 @@
 en:
   spree:
     view_shopping_cart: "See Cart"
+    exceeds_available_stock: "Exceeds available stock, please enter another quantity."
   your_bag: "Your bag"
