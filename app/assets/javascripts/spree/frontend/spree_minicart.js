@@ -73,6 +73,14 @@ jQuery(document).ready(function($){
         }
     });
 
+    //Update coupon code
+    $(document).on('click', '#update-button', function(e){
+      var coupon_code, coupon_code_field, coupon_status, coupon_form, url;
+      $('#coupon_loading').css({"display": "block", "visibility": "visible"});
+      $('#update-button').css({"visibility": "hidden"});
+    });
+
+
     $(document).on("ajax:beforeSend", "form[data-remote]", function(){
         if(item.length > 0) {
             item.parent().children($("div.loading")).css({"display": " inline-block", "visibility": "visible"});
