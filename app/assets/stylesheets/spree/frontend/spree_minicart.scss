@@ -253,6 +253,14 @@ ul#minicart-items{
       padding-left: 5px;
       text-align: left;
       width: 70%;
+      h6{
+        text-transform: none;
+        margin-bottom: 0px;
+        font-size: 14px;
+      }
+      span#variant_options{
+        font-size: 11px;
+      }
     }
     div.loading {
       display: none;
