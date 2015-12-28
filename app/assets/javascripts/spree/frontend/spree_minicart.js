@@ -75,7 +75,6 @@ jQuery(document).ready(function($){
 
     //Update coupon code
     $(document).on('click', '#update-button', function(e){
-      var coupon_code, coupon_code_field, coupon_status, coupon_form, url;
       $('#coupon_loading').css({"display": "block", "visibility": "visible"});
       $('#update-button').css({"visibility": "hidden"});
     });
