@@ -111,7 +111,7 @@ div#footer_dynamic_cart {
     }
   }
 
-  div#minicart-details h3, h4, h5 {
+  div#minicart-details h3, h4, h5, h6 {
     display: inline !important;
   }
 
@@ -125,6 +125,7 @@ div#footer_dynamic_cart {
   div#minicart_shipping, div#minicart_tax {
     background-color: #F2F2F2;
     padding: 15px;
+    font-size: 12px;
   }
 
   div#minicart_subtotal {
@@ -181,6 +182,7 @@ div#form_dynamic_cart{
       font-weight: bolder;
       font-size: 16px;
       color: rgb(169, 68, 66);
+      display: block;
     }
   }
 }
@@ -264,6 +266,10 @@ ul#minicart-items{
     }
     div.loading {
       display: none;
+    }
+    div.minicart-item-image{
+      vertical-align: top;
+      margin-top: 15px;
     }
   }
 }
