@@ -7,6 +7,7 @@ $("#link-to-cart").html('<%= escape_javascript render("spree/shared/cart") %>');
 <% else %>  
 		$('#form_dynamic_cart').prepend("<div id='out-of-stock' class='alert alert-error'></div>");
 		$('#out-of-stock').html('<%= Spree.t(:exceeds_available_stock) %>');
+		$('#form_dynamic_cart').scrollTop();
 <% end %>
 
 $("#progress").slideUp();
@@ -15,4 +16,4 @@ setTimeout(function () {
     $('#cd-cart').removeClass('speed-in');
     $('#cd-shadow-layer').removeClass('is-visible');
     $('#out-of-stock').remove();
-}, 3000);
+}, 3500);
