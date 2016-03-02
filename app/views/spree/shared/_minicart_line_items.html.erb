@@ -9,9 +9,10 @@
       </div>
       <div class="minicart-item-description" data-hook="minicart_item_description">
         <h6><%= link_to line_item.name, product_path(variant.product) %></h6>
+        <span id="variant_options"> <%= variant.options_text %> </span>
         <% if line_item.insufficient_stock? %>
             <span class="out-of-stock">
-              <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
+              <%= Spree.t(:out_of_stock) %>
             </span>
         <% end %>
       </div>

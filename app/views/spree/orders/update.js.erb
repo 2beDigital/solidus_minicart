@@ -1,7 +1,25 @@
 // Refresh minicart count
-$("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>')
+$("#link-to-cart").html('<%= escape_javascript render("spree/shared/cart") %>')
 
-// Refresh minicart line items
-$("#content_dynamic_cart").html('<%= escape_javascript render("spree/shared/minicart_content") %>')
+// Refresh minicart line items and update coupon_code
+<% if ( flash[:error].blank? ) %>
+	$("#content_dynamic_cart").html('<%= escape_javascript render("spree/shared/minicart_content") %>');
+	<% if !current_order.coupon_code.blank? %>
+		$('#update-coupon').append("<div id='coupon_status'></div>");
+		$('#coupon_status').addClass('coupon_success').html('<%= flash[:success] %>');
+	<% end %>
+<% else %>
+	$('#update-coupon').append("<div id='coupon_status'></div>");
+    $('#coupon_status').html('<%= flash[:error] %>');
+<% end %>
 
 $("#progress").slideUp();
+$('#coupon_status').css({"visibility": "visible"});
+$('#coupon_loading').css({"display": "none", "visibility": "hidden"});
+$('#update-button').css({"visibility": "visible"});
+$('#order_coupon_code').val('').focus();
+
+setTimeout(function () {
+    $('#coupon_status').css({"visibility": "hidden"});
+    $('#coupon_status').remove();
+}, 4000);

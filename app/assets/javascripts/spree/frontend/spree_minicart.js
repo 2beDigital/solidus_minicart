@@ -4,14 +4,18 @@ jQuery(document).ready(function($){
         $close_cart = $('#close_cart'),
         $lateral_cart = $('#cd-cart'),
         $shadow_layer = $('#cd-shadow-layer'),
-        $button_add_to_cart = $('#add-to-cart-button'),
-        item = '';
+        $form_add_to_cart = $('div#cart-form form'),
+        item = '',
+        divs = $('#product-variants .variant-options'),
+        selected = divs.find('a.selected');
 
 
-    // Open Cart
-    $button_add_to_cart.on('click', function(){
-        toggle_panel_visibility($lateral_cart, $shadow_layer, $('body'));
-        $("#progress").slideDown();
+    $form_add_to_cart.on('submit', function(event){
+        var selected = divs.find('a.selected');
+        if (selected.length == divs.length) {
+            toggle_panel_visibility($lateral_cart, $shadow_layer, $('body'));
+            $("#progress").slideDown();
+        }
     });
 
     $cart_trigger.on('click', function(event){
@@ -69,6 +73,13 @@ jQuery(document).ready(function($){
         }
     });
 
+    //Update coupon code
+    $(document).on('click', '#update-button', function(e){
+      $('#coupon_loading').css({"display": "block", "visibility": "visible"});
+      $('#update-button').css({"visibility": "hidden"});
+    });
+
+
     $(document).on("ajax:beforeSend", "form[data-remote]", function(){
         if(item.length > 0) {
             item.parent().children($("div.loading")).css({"display": " inline-block", "visibility": "visible"});
@@ -84,7 +95,6 @@ jQuery(document).ready(function($){
         } else {
             $("#progress").slideUp();
         }
-        console.log('Ajax:after');
         item = '';
     })
 });

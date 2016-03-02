@@ -15,7 +15,7 @@ div#cd-cart{
   right: -100%;
   top: 0;
   width: 300px;
-  z-index: 3;
+  z-index: 1000;
   -webkit-overflow-scrolling: touch;
   -webkit-transition: right 0.3s;
   -moz-transition: right 0.3s;
@@ -93,27 +93,62 @@ div#content_dynamic_cart{
   padding: 0px;
 }
 
-div#footer_dynamic_cart{
-  background-color: #ffffff;
+div#footer_dynamic_cart {
+  background-color: #F2F2F2;
   bottom: 0;
   box-shadow: 0px -3px 5px 0px #979798;
   min-height: 100px;
   padding: 0;
   width: 100%;
-  div#minicart-details{
-    background-color: lightgray;
-    border-bottom: 1px solid grey;
-    padding: 15px;
+  div#minicart-details {
+    background-color: #FFF;
+    border-bottom: 1px solid black;
+    padding: 0px;
     width: 100%;
-    span.order-total{
+    span.order-total {
       float: right;
     }
   }
-  div#minicart-footer{
+
+  div#minicart-footer {
     padding: 20px;
     text-align: center;
+    a {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+
+  div#minicart-details h3, h4, h5, h6 {
+    display: inline !important;
+  }
+
+  div#minicart-details {
+    h4 {
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+  }
+
+  div#minicart_shipping, div#minicart_tax {
+    background-color: #FAFAFA;
+    padding: 5px 15px;
+    font-size: 12px;
+  }
+
+  div#minicart_subtotal {
+    padding: 15px;
+    background-color: #F2F2F2;
+  }
+
+  div#minicart_total {
+    padding: 10px 15px;
+    border-top: 1px solid black;
+    text-transform: uppercase;
+    background-color: #F2F2F2;
   }
 }
+
 
 
 div#form_dynamic_cart{
@@ -126,6 +161,42 @@ div#form_dynamic_cart{
     text-align: center;
     text-transform: uppercase;
   }
+  div#errorExplanation{
+    padding: 10px;
+    h3, .h3 {
+      font-size: 12px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      text-align: justify;
+    }
+    p {
+      margin-top: 5px;
+      font-size: 12px;
+      text-transform: none;
+      text-align: justify;
+    }
+    ul{
+      list-style: outside none url;
+       li {
+        font-size: 12px;
+        text-transform: none;
+        text-align: justify;
+      }
+    }
+  }
+  div.minicart-item-description{
+    span.out-of-stock{
+      font-weight: bolder;
+      font-size: 16px;
+      color: rgb(169, 68, 66);
+      display: block;
+    }
+  }
+}
+
+#out-of-stock.alert.alert-error{
+  text-transform: none;
 }
 
 .minicart-actions{
@@ -154,6 +225,8 @@ div#form_dynamic_cart{
 ul#minicart-items{
   margin-bottom: 10px;
   margin-top: 10px;
+  list-style: outside none none;
+  padding-left: 0px;
   li{
     a{
       color: black;
@@ -190,25 +263,108 @@ ul#minicart-items{
       padding-left: 5px;
       text-align: left;
       width: 70%;
+      h6{
+        text-transform: none;
+        margin-bottom: 0px;
+        font-size: 14px;
+      }
+      span#variant_options{
+        font-size: 11px;
+      }
     }
     div.loading {
-      background: transparent url($preloader) no-repeat center center;
-      background-size: 39px 39px;
       display: none;
-      height: 40px;
-      margin-bottom: -13px;
-      margin-left: 20px;
-      margin-top: -4px;
-      visibility: hidden;
-      width: 40px;
-      z-index: 1;
-      transform: scale(0.5);
-      transition: opacity 0.5s, transform 0.5s;
-      -webkit-transform: scale(0.5);
-      -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    }
+    div.minicart-item-image{
+      vertical-align: top;
+      margin-top: 15px;
     }
   }
 }
+
+div.loading {
+    background: transparent url($preloader) no-repeat center center;
+    background-size: 40px 40px;
+    display: none;
+    height: 40px;
+    margin-bottom: -13px;
+    margin-left: 20px;
+    margin-top: -4px;
+    visibility: hidden;
+    width: 40px;
+    z-index: 1;
+    transform: scale(0.5);
+    transition: opacity 0.5s, transform 0.5s;
+    -webkit-transform: scale(0.5);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+}
+
+/// Update Coupon_code
+div#coupon_status {
+    visibility: hidden;
+    position: absolute;
+    padding: 15px;
+    bottom: 40px;
+    margin: 0px 10px;
+    text-align: left;
+    background-color: #DE5949;
+    color: #FFF;
+    text-transform: none;
+}
+
+div#coupon_status::after {
+    content: "";
+    position: absolute;
+    z-index: 9;
+    left: 10px;
+    bottom: -7px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #DE5949;
+    font-size: 0px;
+    line-height: 0;
+}
+
+div#coupon_status.coupon_success{
+  background-color: #398439;
+}
+
+div#coupon_status.coupon_success::after{
+  border-top: 12px solid #398439;
+}
+
+
+form#update-coupon{
+  position: relative;
+  padding: 0px 0px 0px 15px;
+  border-top: 1px solid black;
+  div#minicart_coupon_code{
+    padding: 5px 0px;
+    input#order_coupon_code{
+        width: 180px;
+        border: medium none;
+        line-height: 30px;
+    }
+    button#update-button{
+      line-height: 42px;
+      float: right;
+      border: medium none;
+      margin-top: -5px;
+      padding: 0px 15px;
+    }
+  }
+  div#coupon_loading.loading{
+      margin-bottom: 0px;
+      margin-left: 223px;
+      margin-top: -41px;
+      position: absolute;
+      transform: scale(0.7);
+    }
+}
+
 
 /* --------------------------------
 
