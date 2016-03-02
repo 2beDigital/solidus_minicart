@@ -20,6 +20,10 @@ div#cd-cart{
   -webkit-transition: right 0.3s;
   -moz-transition: right 0.3s;
   transition: right 0.3s;
+  .btn,
+  .btn-primary{
+    color: #fff !important;
+  }
 }
 
 #cd-cart-trigger a {
@@ -38,6 +42,8 @@ div#cd-cart{
 div#cart_title{
   background-color: black;
   color: white;
+  font-size: 18px;
+  font-weight: bolder;
   height: 50px;
   padding-top: 15px;
   text-align: center;
