@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_minicart'
-  s.version     = '1.1.4'
+  s.version     = '1.1.5'
   s.summary     = "Spree Minicart displays a minicart in your spree store"
   s.description = "Spree Minicart allows customer to preview their cart without leaving the page they're on. This is a fork from https://github.com/sbounmy/spree_minicart by Stéphane Bounmy."
   s.required_ruby_version = '>= 1.9.3'
