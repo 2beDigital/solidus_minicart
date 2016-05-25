@@ -52,11 +52,11 @@ div#cart_title{
   font-weight: bolder;
   p{
     width: 100%;
+    margin-top: -5px;
     a#close_cart{
       color: white;
       cursor: pointer;
       float: left;
-      margin-top: -5px;
     }
   }
 }
