@@ -1,0 +1,5 @@
+fr:
+  spree:
+    view_shopping_cart: "Voir panier"
+    exceeds_available_stock: "Dépasse stock disponible, s'il vous plaît entrer dans une autre quantité."
+  your_bag: "Mon panier"
