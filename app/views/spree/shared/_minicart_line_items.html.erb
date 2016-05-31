@@ -23,7 +23,7 @@
         <%= line_item.single_money.to_html %>
       </div>
       <div class="minicart-item-quantity" data-hook="minicart_item_quantity">
-        <%= item_form.number_field :quantity, :min => 0, :class => "line_item_quantity", :size => 2 %>
+        <%= line_item.number_field_tag :quantity, :min => 1, :class => "line_item_quantity", :size => 2 %>
         <div class="loading"></div>
       </div>
       <div class="minicart-item-total" data-hook="minicart_item_total">
