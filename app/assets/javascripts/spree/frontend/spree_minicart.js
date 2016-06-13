@@ -59,8 +59,10 @@ jQuery(document).ready(function($){
     $(document).on('change', 'form#update-minicart input.line_item_quantity', function(e){
         item = $(this);
         var value = $(this).val();
-        $(this).parent().siblings('div[data-hook="minicart_item_quantity"]').find("input.line_item_quantity").val(value);
-        $(this).parents('form').first().submit();
+        if (!isNaN(value) && value != null && value.length > 0){
+            $(this).parent().siblings('div[data-hook="minicart_item_quantity"]').find("input.line_item_quantity").val(value);
+            $(this).parents('form').first().submit();
+        }
         e.preventDefault();
 
         if(document.location.pathname == '/cart') {
