@@ -282,6 +282,10 @@ ul#minicart-items{
     div.minicart-item-image{
       vertical-align: top;
       margin-top: 15px;
+      max-width: 50px;
+      img{
+        width: 100%;
+      }
     }
   }
 }
