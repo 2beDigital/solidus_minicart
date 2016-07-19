@@ -139,6 +139,13 @@ div#footer_dynamic_cart {
     font-size: 12px;
   }
 
+  div#minicart_tax{
+    h6{
+      font-weight: normal !important;
+      font-size: 11px !important;
+    }
+  }
+
   div#minicart_subtotal {
     padding: 15px;
     background-color: #F2F2F2;
@@ -244,7 +251,7 @@ ul#minicart-items{
     }
     .minicart-item-quantity{
       margin-bottom: 5px;
-      width: 29%;
+      width: 20%;
       input{
         width: 100%;
         text-align: center;
