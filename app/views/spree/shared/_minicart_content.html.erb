@@ -64,6 +64,16 @@
               <% end %>
           </div>
         <% end %>
+
+        <% if current_order.adjustments.nonzero.eligible.exists? %>
+          <div id="minicart_promotions">              
+            <% current_order.adjustments.nonzero.eligible.each do |adjustment| %>
+                <h6><%= adjustment.label  %></h6>
+                <span class="order-total"><%= adjustment.display_amount.to_html %></span>
+            <% end %>
+          </div>
+        <% end %>
+        
         
         
         <%= form_for current_order, :url => spree.update_cart_path, :html => {:id => 'update-coupon'}, :remote => true do |order_form| %>
