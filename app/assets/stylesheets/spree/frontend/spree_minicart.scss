@@ -254,7 +254,7 @@ ul#minicart-items{
     }
     .minicart-item-quantity{
       margin-bottom: 5px;
-      width: 20%;
+      width: 30%;
       input{
         width: 100%;
         text-align: center;
@@ -266,7 +266,12 @@ ul#minicart-items{
       text-align: center;
       width: 8%;
     }
-    div.minicart-item-total,
+    div.minicart-item-total{
+      height: 35px;
+      margin-left: 5px;
+      text-align: right;
+      width: 33%;
+    }
     div.minicart-item-price{
       height: 35px;
       margin-left: 5px;
