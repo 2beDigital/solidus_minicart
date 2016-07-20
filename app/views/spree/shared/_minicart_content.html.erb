@@ -56,11 +56,13 @@
                   <% end %>
               <% end %>
 
-              <% current_order.all_adjustments.tax.eligible.group_by(&:label).each do |label, adjustments| %>
-                  <% if adjustments.sum(&:amount) != 0 %>
-                      <h6><%= Spree.t(:tax) %>: <%= label %> </h6>
-                      <span class="order-total"><%= Spree::Money.new(adjustments.sum(&:amount), :currency => current_order.currency) %></span>
-                  <% end %>
+              <% if show_taxes %>
+                <% current_order.all_adjustments.tax.eligible.group_by(&:label).each do |label, adjustments| %>
+                    <% if adjustments.sum(&:amount) != 0 %>
+                        <h6><%= Spree.t(:tax) %>: <%= label %> </h6>
+                        <span class="order-total"><%= Spree::Money.new(adjustments.sum(&:amount), :currency => current_order.currency) %></span>
+                    <% end %>
+                <% end %>
               <% end %>
           </div>
         <% end %>
