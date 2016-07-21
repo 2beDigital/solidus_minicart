@@ -135,14 +135,16 @@ div#footer_dynamic_cart {
 
   div#minicart_shipping, 
   div#minicart_tax, 
-  div#minicart_promotions {
+  div#minicart_promotions,
+  div#minicart_tax_promotion {
     background-color: #FAFAFA;
     padding: 0px 15px;
     font-size: 12px;
   }
 
   div#minicart_tax,
-  div#minicart_promotions{
+  div#minicart_promotions,
+  div#minicart_tax_promotion{
     h6{
       font-weight: normal !important;
       font-size: 11px !important;
