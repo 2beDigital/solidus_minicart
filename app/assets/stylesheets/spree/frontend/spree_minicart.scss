@@ -147,7 +147,15 @@ div#footer_dynamic_cart {
   div#minicart_tax_promotion{
     h6{
       font-weight: normal !important;
-      font-size: 11px !important;
+      font-size: 13px !important;
+      max-width: 220px;
+      display: inline-block !important;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    span.order-total {
+      float: right;
+      margin-top: 5px;
     }
   }
 
