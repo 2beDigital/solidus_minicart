@@ -93,9 +93,12 @@
         </div>
       </div>
 
-      <div id="minicart-footer" data-hook='minicart_item_actions'>
-        <%= link_to Spree.t(:checkout), spree.checkout_path, :class => 'btn btn-primary', :id => 'checkout-link' %>
-      </div>
+      <%= form_for current_order, :url => update_cart_path, :html => {:id => 'form-checkout-link'} do |order_form| %>
+        <div id="minicart-footer" data-hook='minicart_item_actions'>
+          <%= button_tag :class => 'btn btn-primary', :id => 'checkout-link', :name => 'checkout' do %>
+            <%= Spree.t(:checkout) %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-
 <% end %>
