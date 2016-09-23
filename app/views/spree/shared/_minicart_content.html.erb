@@ -40,10 +40,8 @@
 
         <% if current_order.shipment_adjustments.nonzero.exists? || current_order.shipments.any? %>
             <div id="minicart_shipping">
-                <% current_order.shipments.each do |shipment| %>
-                    <h6><%= Spree.t(:shipping) %>: <%= shipment.shipping_method.name %></h6>
-                    <span class="order-total"><%= shipment.display_discounted_cost %></span><br>
-                <% end %>
+              <h6><%= Spree.t(:shipping) %>:</h6>
+              <span class="order-total"><%= Spree::Money.new(current_order.shipments.to_a.sum(&:cost), currency: current_order.currency).to_html %></span><br>
             </div>
         <% end %>
 
