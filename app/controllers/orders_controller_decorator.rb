@@ -1,7 +1,7 @@
 module Spree
   OrdersController.class_eval do
     respond_to :js, :only => [:populate, :update]
-    ssl_allowed :populate, :update
+    #ssl_allowed :populate, :update
 
     def populate
       order    = current_order(create_order_if_necessary: true)

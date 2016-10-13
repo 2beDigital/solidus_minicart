@@ -1,10 +1,10 @@
 # encoding: UTF-8
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_minicart'
-  s.version     = '1.2.4'
-  s.summary     = "Spree Minicart displays a minicart in your spree store"
-  s.description = "Spree Minicart allows customer to preview their cart without leaving the page they're on. This is a fork from https://github.com/sbounmy/spree_minicart by Stéphane Bounmy."
+  s.name        = 'solidus_minicart'
+  s.version     = '0.1.0'
+  s.summary     = "Solidus Minicart displays a minicart in your spree store"
+  s.description = "Solidus Minicart allows customer to preview their cart without leaving the page they're on. This is a fork from https://github.com/sbounmy/spree_minicart by Stéphane Bounmy."
   s.required_ruby_version = '>= 1.9.3'
 
 
@@ -18,10 +18,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   # doesn't work with rails 4.1.10
-  s.add_dependency 'rails', '4.1.11'
-
-  s.add_dependency 'spree_core', '~> 2.4'
-  s.add_dependency 'spree_frontend', '~> 2.4'
+  s.add_dependency 'rails', '~> 4.2.0'
 
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'factory_girl', '~> 4.5'

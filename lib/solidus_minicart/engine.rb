@@ -1,8 +1,8 @@
-module SpreeMinicart
+module SolidusMinicart
   class Engine < Rails::Engine
     require 'spree/core'
     isolate_namespace Spree
-    engine_name 'spree_minicart'
+    engine_name 'solidus_minicart'
 
     # use rspec for tests
     config.generators do |g|

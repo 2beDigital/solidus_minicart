@@ -55,7 +55,6 @@ div#cart_title{
   font-weight: bolder;
   p{
     width: 100%;
-    margin-top: -5px;
     a#close_cart{
       color: white;
       cursor: pointer;
@@ -306,7 +305,6 @@ ul#minicart-items{
     }
     div.minicart-item-image{
       vertical-align: top;
-      margin-top: 15px;
       max-width: 50px;
       img{
         width: 100%;
