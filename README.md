@@ -1,4 +1,4 @@
-SpreeMinicart
+SolidusMinicart
 =============
 
 Minicart feature forked from Stéphane Bounmy.
@@ -8,11 +8,11 @@ Minicart allows customer to preview their cart before they start the checkout pr
 Installation
 ------------
 
-To install Spree Minicart for spree 2.4.x, just add the following to your Gemfile:
+To install Solidus Minicart for solidus 1.4, just add the following to your Gemfile:
 
 
 ```ruby
-gem 'spree_minicart', :git => 'git://github.com/cahein/spree_minicart.git', :branch => "2-4-stable"
+gem 'solidus_minicart', :git => 'https://github.com/2beDigital/solidus_minicart', branch: 'master'
 ```
 
 Now, bundle up with:
@@ -24,7 +24,7 @@ bundle install
 And finally run the install generator to automatically insert 'require spree/frontend/spree_minicart' in your asset file. If you experience a problem with loading assets from the 'vendor/assets' folder, simply copy the relevant lines into the 'app/assets' files (all.js, all.css).
 
 ```ruby
-rails g spree_minicart:install
+rails g solidus_minicart:install
 ```
 
 Customization
@@ -34,11 +34,6 @@ The minicart markup should let you customize the way you want your minicart by u
 
 If you need to change the js response when you add / update the minicart, check out : 'spree/orders/populate.js.erb' and 'spree/orders/update.js.erb'.
 
-
-Todo
--------
-
-- Update item quantity in the minicart
 
 Testing
 -------
@@ -52,15 +47,15 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
 The Gemfile needs
 
 ```ruby
-gem 'spree', '2.4.x'
+gem 'solidus', '1.4'
 # Provides basic authentication functionality for testing parts of your engine
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-4-stable'
+gem 'solidus_auth_devise', github: 'solidusio/ssolidus_auth_devise'
 ```
 
 Compatibility
 ------------
 
-Tested under Spree 2.4.x
+Tested under Solidus 1.4
 
 Contribute
 ----------
