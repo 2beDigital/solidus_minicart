@@ -8,7 +8,7 @@ Minicart allows customer to preview their cart before they start the checkout pr
 Installation
 ------------
 
-To install Solidus Minicart for solidus 1.4, just add the following to your Gemfile:
+To install Solidus Minicart for solidus 2.0, just add the following to your Gemfile:
 
 
 ```ruby
@@ -47,15 +47,15 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
 The Gemfile needs
 
 ```ruby
-gem 'solidus', '1.4'
+gem 'solidus', '2.0'
 # Provides basic authentication functionality for testing parts of your engine
-gem 'solidus_auth_devise', github: 'solidusio/ssolidus_auth_devise'
+gem 'solidus_auth_devise', github: 'solidusio/solidus_auth_devise'
 ```
 
 Compatibility
 ------------
 
-Tested under Solidus 1.4
+Tested under Solidus 2.0
 
 Contribute
 ----------
