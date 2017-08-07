@@ -18,7 +18,7 @@
 <% else %>
 
     <div id="form_dynamic_cart">
-      <%= form_for current_order, :url => spree.update_cart_path, :html => {:id => 'update-minicart'}, :remote => true do |order_form| %>
+      <%= form_for current_order, :url => spree.update_cart_path, :html => {:id => 'update-minicart'}, :remote => true, authenticity_token: true do |order_form| %>
 
           <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
 
