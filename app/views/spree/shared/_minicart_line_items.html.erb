@@ -17,7 +17,7 @@
         <% end %>
       </div>
       <div class="minicart-item-delete" data-hook="minicart_item_delete">
-        <%= link_to '<i class="fa fa-trash" aria-hidden="true">&nbsp;</i>'.html_safe, '#', :class => 'minicart_remove', :id => "delete_#{dom_id(line_item)}" %>
+        <%= link_to '<i class="fa fa-trash" aria-hidden="true"><span class='hidden'>&nbsp;</span></i>'.html_safe, '#', :class => 'minicart_remove', :id => "delete_#{dom_id(line_item)}" %>
       </div>
       <div class="minicart-item-price" data-hook="minicart_item_price">
         <%= line_item.single_money.to_html %>
