@@ -40,7 +40,7 @@
 
         <% if current_order.shipment_adjustments.nonzero.exists? || current_order.shipments.any? %>
             <div id="minicart_shipping">
-              <h6><%= Spree.t(:shipping) %>:</h6>
+              <h6><%= Spree.t(:shipment) %>:</h6>
               <span class="order-total"><%= Spree::Money.new(current_order.shipments.to_a.sum(&:cost), currency: current_order.currency).to_html %></span><br>
             </div>
         <% end %>
@@ -49,7 +49,7 @@
           <div id="minicart_tax_promotion">              
               <% current_order.line_item_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
                   <% if adjustments.sum(&:amount) != 0 %>
-                      <h6><%= Spree.t(:promotion) %>: <%= label %> </h6>
+                      <h6><%= label %> </h6>
                       <span class="order-total"><%= Spree::Money.new(adjustments.sum(&:amount), :currency => current_order.currency) %></span>
                   <% end %>
               <% end %>
