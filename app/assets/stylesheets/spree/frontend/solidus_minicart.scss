@@ -331,7 +331,7 @@ div.loading {
 }
 
 /// Update Coupon_code
-div#coupon_status {
+div#minicart_coupon_status {
     visibility: hidden;
     position: absolute;
     padding: 15px;
@@ -343,7 +343,7 @@ div#coupon_status {
     text-transform: none;
 }
 
-div#coupon_status::after {
+div#minicart_coupon_status::after {
     content: "";
     position: absolute;
     z-index: 9;
@@ -359,11 +359,11 @@ div#coupon_status::after {
     line-height: 0;
 }
 
-div#coupon_status.coupon_success{
+div#minicart_coupon_status.coupon_success{
   background-color: #398439;
 }
 
-div#coupon_status.coupon_success::after{
+div#minicart_coupon_status.coupon_success::after{
   border-top: 12px solid #398439;
 }
 

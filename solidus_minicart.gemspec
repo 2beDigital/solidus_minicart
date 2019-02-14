@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_minicart'
-  s.version     = '0.1.3'
+  s.version     = '0.1.4'
   s.summary     = "Solidus Minicart displays a minicart in your spree store"
   s.description = "Solidus Minicart allows customer to preview their cart without leaving the page they're on. This is a fork from https://github.com/sbounmy/spree_minicart by Stéphane Bounmy."
   s.required_ruby_version = '>= 2.2.0'
